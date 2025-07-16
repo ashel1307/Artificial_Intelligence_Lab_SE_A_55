@@ -2,18 +2,15 @@ from experta import *
 class StudentFacts(Fact):
     pass
 class CareerExpertSystem(KnowledgeEngine):
-    @Rule(StudentFacts(likes='Maths'), StudentFacts(likes='Physics'))
-    def mechanical(self):
-        print("Suggested Career Path: Mechanical Engineering")
+    @Rule(StudentFacts(likes='Maths'), StudentFacts(likes='Physics') , StudentFacts(likes='Chemistry'))
+    def engineering_sciences(self):
+        print("Suggested Career Path: Engineering Sciences")
     @Rule(StudentFacts(likes='Programming'), StudentFacts(likes='Maths'))
     def computer(self):
         print("Suggested Career Path: Computer Engineering")
-    @Rule(StudentFacts(likes='Biology'), StudentFacts(likes='Chemistry'))
-    def biotech(self):
-        print("Suggested Career Path: Biotechnology")
-    @Rule(StudentFacts(likes='Circuits'), StudentFacts(likes='Maths'))
-    def electronics(self):
-        print("Suggested Career Path: Electronics Engineering")
+    @Rule(StudentFacts(likes='Maths'), StudentFacts(likes='Graphics'))
+    def mechanical(self):
+        print("Suggested Career Path: Mechanical Engineering")
 
 def main():
     engine = CareerExpertSystem()
