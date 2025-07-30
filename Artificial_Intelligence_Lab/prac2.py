@@ -1,14 +1,12 @@
 def suggest_career(interests):
     interests = [interest.strip().lower() for interest in interests]
 
-    # Convert to lowercase to make matching case-insensitive
     has_maths = 'maths' in interests
     has_physics = 'physics' in interests
     has_chemistry = 'chemistry' in interests
     has_programming = 'programming' in interests
     has_graphics = 'graphics' in interests
 
-    # Check combinations
     if has_maths and has_physics and has_chemistry:
         print("Suggested Career Path: Engineering Sciences")
     elif has_programming and has_maths:
